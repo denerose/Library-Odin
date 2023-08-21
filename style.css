@@ -1,0 +1,30 @@
+:root {
+    --dark-text: var(--dark-purple);
+    --light-text: var(--light-gold);
+    --main-purple: 108, 80, 164;
+    --light-purple: 223, 213, 245;
+    --dark-purple: 32, 11, 75;
+    --light-gold: 255, 250, 219;
+    --gold: 240, 222, 104;
+    --green: 190, 227, 98;
+    --light-green: 220, 246, 155;
+    --dark-green: 75, 104, 6;
+    --pink: 221, 139, 192;
+    --light-pink: 247, 212, 235;
+    --dark-pink: 85, 5, 57;
+}
+
+body {
+    background-color: rgb(var(--light-purple));
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    background-color: rgb(var(--green));
+    height: 5rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: ;
+}
