@@ -1,31 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Library Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <header>
         <h1>A Little Library</h1>
     </header>
     <main>
-       <table id="libraryTable">
-        <caption>a table showing all our books</caption>
-        <thead>
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Pages</th>
-            <th>Read</th>
-        </tr>
-        </thead>
-    </table>
+        <div>
+            <table id="libraryTable">
+                <caption>a table showing all our books</caption>
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Read</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <form action="" id="newBookForm">
+                <label for="titleInput">Book Title:</label>
+                <input type="text" id="titleInput">
+                <label for="authorInput">Author:</label>
+                <input type="text" id="authorInput">
+                <label for="pagesInput">Pages:</label>
+                <input type="number" id="pagesInput">
+                <label for="haveReadInput">Read:</label>
+                <input type="checkbox" id="haveReadInput">
+                <button type="submit">Add Book</button>
+            </form>
+        </div>
     </main>
     <footer>this is footer text</footer>
     <script src="library.js"></script>
     <script src="display.js"></script>
 </body>
+
 </html>
