@@ -1,20 +1,10 @@
 "use strict";
 const myLibrary = [];
 const newBookForm = document.getElementById("newBookForm");
-class LibraryBook {
-    constructor(book) {
-        this.book = book;
-        console.log(`new LibraryBook = ${book.title}`);
-    }
-    get getInfo() {
-        return (`${this.book.title} by ${this.book.author}, ${this.book.pages} pages.`);
-    }
-}
-function addBookToLibrary(rawBook) {
-    const newBook = new LibraryBook(rawBook);
+function addBookToLibrary(newBook) {
     myLibrary.push(newBook);
     const newKey = myLibrary.indexOf(newBook);
-    newBook.book.key = newKey;
+    newBook.key = newKey;
 }
 function removeBookFromLibrary() {
 }
@@ -48,6 +38,6 @@ newBookForm.addEventListener("submit", (e) => {
             haveRead: newReadBool,
         };
         addBookToLibrary(bookFromInput);
-        addBooksToTable();
+        newRow(bookFromInput);
     }
 });

@@ -1,4 +1,4 @@
-const myLibrary: LibraryBook[] = [];
+const myLibrary: Book[] = [];
 const newBookForm: HTMLFormElement = document.getElementById("newBookForm") as HTMLFormElement;
 
 
@@ -11,21 +11,10 @@ interface Book {
     key?: number,
 }
 
-class LibraryBook {
-
-    constructor(public book: Book) { console.log(`new LibraryBook = ${book.title}`) }
-
-    public get getInfo(): string {
-        return (`${this.book.title} by ${this.book.author}, ${this.book.pages} pages.`);
-    }
-
-}
-
-function addBookToLibrary(rawBook: Book) {
-    const newBook = new LibraryBook(rawBook);
+function addBookToLibrary(newBook: Book) {
     myLibrary.push(newBook);
     const newKey = myLibrary.indexOf(newBook);
-    newBook.book.key = newKey;
+    newBook.key = newKey;
 }
 
 function removeBookFromLibrary() {
@@ -62,6 +51,6 @@ newBookForm.addEventListener("submit", (e) => {
             haveRead: newReadBool,
         }
         addBookToLibrary(bookFromInput);
-        addBooksToTable();
+        newRow(bookFromInput);
     }
 })
