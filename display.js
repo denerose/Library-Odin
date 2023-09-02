@@ -2,6 +2,16 @@
 const libraryTable = document.getElementById("libraryTable");
 const newBookForm = document.getElementById("newBookForm");
 const refreshBtn = document.getElementById("refreshBtn");
+function newDeleteButton(bookRef) {
+    const newDelBtn = document.createElement("button");
+    newDelBtn.id = String(bookRef);
+    newDelBtn.innerText = "Delete";
+    newDelBtn.addEventListener("click", () => {
+        removeBookFromLibrary(bookRef);
+        refreshTable();
+    });
+    return (newDelBtn);
+}
 function newRow(bookToAdd) {
     const row = libraryTable.insertRow(1);
     row.id = String(bookToAdd.key);
@@ -10,10 +20,12 @@ function newRow(bookToAdd) {
     const authorTd = row.insertCell(1);
     const pagesTd = row.insertCell(2);
     const readTd = row.insertCell(3);
+    const deleteTD = row.insertCell(4);
     titleTd.innerText = bookToAdd.title;
     authorTd.innerText = bookToAdd.author;
     pagesTd.innerText = String(bookToAdd.pages);
     readTd.innerText = String(bookToAdd.haveRead);
+    deleteTD.appendChild(newDeleteButton(bookToAdd.key));
 }
 function addBooksToTable() {
     myLibrary.forEach(item => {
@@ -31,7 +43,6 @@ function clearTable() {
         }
     });
 }
-addBooksToTable();
 newBookForm.addEventListener("submit", (e) => {
     e.preventDefault();
     let newTitle = document.getElementById("titleInput");
@@ -46,19 +57,24 @@ newBookForm.addEventListener("submit", (e) => {
         if (newRead.checked) {
             newReadBool = true;
         }
+        let newKey = (myLibrary.length + 1);
         let bookFromInput = {
             title: newTitle.value,
             author: newAuthor.value,
             pages: newPages.value,
             rating: 0,
             haveRead: newReadBool,
+            key: newKey
         };
         addBookToLibrary(bookFromInput);
         newRow(bookFromInput);
     }
 });
-refreshBtn.addEventListener("click", () => {
-    console.log("clear");
+function refreshTable() {
     clearTable();
-    // addBooksToTable;
+    addBooksToTable();
+}
+refreshBtn.addEventListener("click", () => {
+    refreshTable();
 });
+addBooksToTable();

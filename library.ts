@@ -6,7 +6,7 @@ interface Book {
     pages: number,
     rating?: number,
     haveRead: boolean,
-    key?: number,
+    key: number,
 }
 
 function addBookToLibrary(newBook: Book) {
@@ -15,7 +15,11 @@ function addBookToLibrary(newBook: Book) {
     newBook.key = newKey;
 }
 
-function removeBookFromLibrary() {
+function removeBookFromLibrary(keyOfBookToRemove: number) {
+    const indexToRemove: number = myLibrary.findIndex((book,idx) => {
+        if (keyOfBookToRemove === book.key) {return true};
+    });
+    delete myLibrary[indexToRemove];
 }
 
 let dummyBook: Book = {
@@ -24,6 +28,7 @@ let dummyBook: Book = {
     pages: 10,
     rating: 5,
     haveRead: false,
+    key: 0,
 }
 
 addBookToLibrary(dummyBook);
