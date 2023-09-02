@@ -1,41 +1,72 @@
 :root {
     --dark-text: var(--dark-purple);
     --light-text: var(--light-gold);
-    --main-purple: 108, 80, 164;
-    --light-purple: 223, 213, 245;
-    --dark-purple: 32, 11, 75;
-    --light-gold: 255, 250, 219;
-    --gold: 240, 222, 104;
-    --green: 190, 227, 98;
-    --light-green: 220, 246, 155;
-    --dark-green: 75, 104, 6;
-    --pink: 221, 139, 192;
-    --light-pink: 247, 212, 235;
-    --dark-pink: 85, 5, 57;
+    --dark-red: 36, 12, 18;
+    --red: 182, 61, 92;
+    --green: 142, 146, 134;
+    --light-pink: 248, 236, 239;
+    --gold: 249, 190, 122;
+    --light-gold: 235, 220, 192;
+    --dark-purple: 33, 21, 34;
+    --purple: 77, 64, 78;
+    --light-purple: 77, 64, 78;
 }
 
 body {
-    background-color: rgb(var(--light-purple));
+    background-color: rgb(var(--dark-red));
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     border: 0;
+    background-image: url(chris-lawton-zvKx6ixUhWQ-unsplash.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100%;
+    color: rgb(var(--dark-text));
 }
 
 header {
-    background-color: rgb(var(--green));
+    background-color: rgba(var(--green), 0.9);
     height: 5rem;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 0.5em solid var(--green);
+    margin: 1em;
+}
+
+nav {
+    border: 0.5em solid var(--light-green);
+    padding: 0.3em;
 }
 
 main {
-    display: grid;
-    grid-template-columns: 2rf 1fr;
+    display: flex;
+}
+
+#tableDiv {
+    background-color: rgba(var(--light-gold), 0.9);
+    flex: 3 0 80%;
+}
+
+#formDiv {
+    background-color: rgba(var(--light-pink), 0.9);
+    flex: 1 0 20%;
 }
 
 footer {
     text-align: center;
     font-size: 0.8rem;
-    padding: 2rem;
+    color: rgb(var(--gold));
+    background-color: rgba(var(--dark-purple), 0.8);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 0.2rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.5;
+}
+
+footer>a {
+    color: rgb(var(--gold));
 }
 
 table {
@@ -44,21 +75,6 @@ table {
     margin-left: auto;
     margin-right: auto;
 }
-
-
-.bookRow {
-    display: grid;
-    grid-template-columns: 
-    repeat(4, 1fr);
-    border: 1px solid rgba(var(--dark-green), 0.175) !important;
-    border-radius: 0.375rem !important;
-    width: auto;
-}
-
-thead > tr {
-    display: grid;
-    grid-template-columns: 
-    repeat(4, 1fr);}
 
 th {
     color: rgb(var(--dark-text));
@@ -72,4 +88,9 @@ td {
 caption {
     caption-side: bottom;
     font-size: 0.7rem;
+}
+
+form {
+    display: grid;
+    padding: 1rem;
 }

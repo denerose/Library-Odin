@@ -15,9 +15,8 @@
         <nav><button type="button" id="refreshBtn">Refresh Library</button></nav>
     </header>
     <main>
-        <div>
+        <div id="tableDiv">
             <table id="libraryTable">
-                <caption>a table showing all our books</caption>
                     <tr>
                         <th>Title</th>
                         <th>Author</th>
@@ -27,7 +26,7 @@
                     </tr>
             </table>
         </div>
-        <div>
+        <div id="formDiv">
             <form action="" id="newBookForm">
                 <label for="titleInput">Book Title:</label>
                 <input type="text" id="titleInput">
@@ -41,7 +40,8 @@
             </form>
         </div>
     </main>
-    <footer>this is footer text</footer>
+    <footer>this is footer text<br/>Photo by <a href="https://unsplash.com/@chrislawton">Chris Lawton</a> on <a href="https://unsplash.com/photos/zvKx6ixUhWQ">Unsplash</a>
+    </footer>
     <script src="library.js"></script>
     <script src="display.js"></script>
 </body>
