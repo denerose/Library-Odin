@@ -4,12 +4,14 @@
     --dark-red: 36, 12, 18;
     --red: 182, 61, 92;
     --green: 142, 146, 134;
+    --dark-green: 102, 105, 107;
     --light-pink: 248, 236, 239;
     --gold: 249, 190, 122;
     --light-gold: 235, 220, 192;
     --dark-purple: 33, 21, 34;
     --purple: 77, 64, 78;
-    --light-purple: 77, 64, 78;
+    --light-purple: 194, 187, 195;
+    --bright-purple: 170, 160, 171;
 }
 
 body {
@@ -65,7 +67,7 @@ footer {
     opacity: 0.5;
 }
 
-footer>a {
+footer>p>a {
     color: rgb(var(--gold));
 }
 
@@ -93,4 +95,15 @@ caption {
 form {
     display: grid;
     padding: 1rem;
+}
+
+button {
+    background-color: rgba(var(--bright-purple), 0.9);
+    box-shadow: 0;
+    border-radius: 2px;
+    border: 0.1px solid rgb(var(--dark-text));
+}
+
+button:hover {
+    background-color: rgba(var(--light-purple));
 }
